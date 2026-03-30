@@ -26,6 +26,21 @@
     --sans: 'IBM Plex Sans', sans-serif;
   }
 
+  [data-theme="light"] {
+    --bg: #f4f6f8;
+    --surface: #ffffff;
+    --surface2: #e8ecf0;
+    --border: #d0d7de;
+    --accent: #0070a8;
+    --accent2: #c44a10;
+    --accent3: #1a7a2e;
+    --accent4: #9a7200;
+    --text: #24292f;
+    --text-dim: #6e7781;
+    --text-bright: #0d1117;
+    --red: #cf222e;
+  }
+
   body {
     background: var(--bg);
     color: var(--text);
@@ -65,8 +80,27 @@
   .header-sub {
     font-size: 11px;
     color: var(--text-dim);
-    margin-left: auto;
     font-family: var(--mono);
+  }
+  .header-right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .theme-toggle {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: var(--mono);
+    font-size: 11px;
+    padding: 4px 10px;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .theme-toggle:hover {
+    background: var(--border);
   }
 
   .nav {
@@ -303,7 +337,10 @@
 <div class="header">
   <div class="header-badge">MS3</div>
   <div class="header-title">Inpatient GI — Clinical Reference</div>
-  <div class="header-sub">UCSD Hillcrest</div>
+  <div class="header-right">
+    <div class="header-sub">VA La Jolla</div>
+    <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn">☀ Light</button>
+  </div>
 </div>
 
 <div class="nav" id="nav">
@@ -1037,6 +1074,29 @@
   function toggle(header) {
     header.parentElement.classList.toggle('open');
   }
+
+  function toggleTheme() {
+    const html = document.documentElement;
+    const btn = document.getElementById('theme-btn');
+    if (html.getAttribute('data-theme') === 'light') {
+      html.removeAttribute('data-theme');
+      btn.textContent = '☀ Light';
+      localStorage.setItem('theme', 'dark');
+    } else {
+      html.setAttribute('data-theme', 'light');
+      btn.textContent = '☾ Dark';
+      localStorage.setItem('theme', 'light');
+    }
+  }
+
+  (function() {
+    if (localStorage.getItem('theme') === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light');
+      document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('theme-btn').textContent = '☾ Dark';
+      });
+    }
+  })();
 </script>
 </body>
 </html>
