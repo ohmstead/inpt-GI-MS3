@@ -338,7 +338,7 @@
   <div class="header-badge">MS3</div>
   <div class="header-title">Inpatient GI — Clinical Reference</div>
   <div class="header-right">
-    <div class="header-sub">VA La Jolla</div>
+    <div class="header-sub">VA La Jolla (#2743)</div>
     <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn">☀ Light</button>
   </div>
 </div>
@@ -351,6 +351,7 @@
   <button class="nav-pill" onclick="showSection('nv', this)">Nausea / Vomiting</button>
   <button class="nav-pill" onclick="showSection('diarrhea', this)">Diarrhea / Pain / Dysphagia</button>
   <button class="nav-pill" onclick="showSection('cancer', this)">Cancer Complications</button>
+  <button class="nav-pill" onclick="showSection('cirrhosis', this)">Cirrhosis</button>
   <button class="nav-pill" onclick="showSection('emergencies', this)">GI Emergencies</button>
   <button class="nav-pill" onclick="showSection('framework', this)">Rounds Framework</button>
 </div>
@@ -1059,6 +1060,206 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- CIRRHOSIS -->
+  <div id="cirrhosis" class="section">
+    <div class="section-header">
+      <div class="section-title">Cirrhosis</div>
+      <div class="section-desc">Etiology · Decompensation · Volume · Infection · Bleeding · Encephalopathy · Screening</div>
+    </div>
+
+    <div class="accordion open">
+      <div class="acc-header" onclick="toggle(this)">
+        <div class="acc-label">Etiology &amp; Fibrosis</div>
+        <span class="acc-tag tag-core">CORE</span>
+        <span class="acc-chevron">›</span>
+      </div>
+      <div class="acc-body">
+        <div class="grid2">
+          <div class="subsection">
+            <div class="sub-title">Common Etiologies</div>
+            <ul class="bullets">
+              <li><strong>EtOH</strong> — most common in veterans</li>
+              <li><strong>MASLD</strong> (metabolic-associated steatotic liver disease)</li>
+              <li><strong>HBV / HCV / HDV</strong></li>
+              <li><strong>AIH</strong> — autoimmune hepatitis</li>
+              <li><strong>Hemochromatosis</strong></li>
+              <li><strong>Wilson's disease</strong></li>
+            </ul>
+          </div>
+          <div class="subsection">
+            <div class="sub-title">Fibrosis Staging</div>
+            <ul class="bullets">
+              <li><strong>F0–F4</strong> by histology (F4 = cirrhosis)</li>
+              <li><strong>FibroScan</strong> (transient elastography) — non-invasive dx</li>
+            </ul>
+            <div class="subsection" style="margin-top:12px">
+              <div class="sub-title">Decompensation — Work Up</div>
+              <ul class="bullets">
+                <li>New or worsening ascites, encephalopathy, variceal bleed, or jaundice</li>
+                <li>Ask about: <strong>EtOH use</strong>, new <strong>medications</strong>, RUQ pain</li>
+                <li>R/o: <strong>infection</strong> (SBP, UTI, PNA), <strong>progression of disease</strong></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="acc-header" onclick="toggle(this)">
+        <div class="acc-label">Volume — Ascites</div>
+        <span class="acc-tag tag-core">CORE</span>
+        <span class="acc-chevron">›</span>
+      </div>
+      <div class="acc-body">
+        <div class="alert alert-blue">
+          <strong>FIRST-LINE</strong>
+          Sodium restriction + diuretics: <code>furosemide 40 mg</code> + <code>spironolactone 100 mg</code> daily (maintain 2:5 ratio on uptitration). Max: furosemide 160 mg / spironolactone 400 mg.
+        </div>
+        <div class="subsection">
+          <div class="sub-title">Diagnostic Paracentesis</div>
+          <ul class="bullets">
+            <li>Send: cell count + diff, culture, albumin, protein, LDH, glucose, Gram stain</li>
+            <li><strong>SBP</strong> = PMN ≥ 250 cells/mm³</li>
+            <li>Give <strong>8 g albumin / liter tapped</strong> for large-volume paracentesis (&gt;5 L) to prevent post-paracentesis circulatory dysfunction</li>
+          </ul>
+        </div>
+        <div class="subsection">
+          <div class="sub-title">Indications for Paracentesis vs. Diuretics</div>
+          <ul class="bullets">
+            <li>Tense / refractory ascites → large-volume paracentesis + albumin</li>
+            <li>Refractory ascites → consider <strong>TIPS</strong> or transplant evaluation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="acc-header" onclick="toggle(this)">
+        <div class="acc-label">Infection — SBP</div>
+        <span class="acc-tag tag-emergency">EMERGENCY</span>
+        <span class="acc-chevron">›</span>
+      </div>
+      <div class="acc-body">
+        <div class="alert alert-red">
+          <strong>SBP DIAGNOSIS</strong>
+          Ascitic PMN ≥ 250 cells/mm³ — treat empirically; do not wait for culture. Empiric tx: <code>cefotaxime</code> or <code>ceftriaxone</code> × 5 days + <code>albumin</code> 1.5 g/kg day 1, 1 g/kg day 3 (reduces HRS risk).
+        </div>
+        <div class="subsection">
+          <div class="sub-title">Workup for Any Suspected Infection</div>
+          <ul class="bullets">
+            <li>CBC, UA/UCx, CXR, blood cultures (RVP if respiratory sx)</li>
+            <li>Diagnostic paracentesis — always tap if new ascites or clinical deterioration</li>
+          </ul>
+        </div>
+        <div class="subsection">
+          <div class="sub-title">SBP Prophylaxis</div>
+          <div class="tbl-wrap">
+            <table>
+              <thead><tr><th>Indication</th><th>Regimen</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Secondary ppx</strong> (h/o SBP)</td><td>Ciprofloxacin or TMP-SMX daily (indefinite)</td></tr>
+                <tr><td><strong>Primary ppx</strong> — high-risk ascites</td><td>Ciprofloxacin or norfloxacin daily</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="sub-title" style="margin-top:12px">Primary Ppx Indications (any one)</div>
+          <ul class="bullets">
+            <li>BUN &gt; 25 mg/dL</li>
+            <li>Bilirubin &gt; 3 mg/dL</li>
+            <li>Ascitic protein &lt; 1.5 g/dL (<strong>low protein content</strong>)</li>
+            <li>Na &lt; 130 mEq/L</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="acc-header" onclick="toggle(this)">
+        <div class="acc-label">Bleeding — Varices</div>
+        <span class="acc-tag tag-emergency">EMERGENCY</span>
+        <span class="acc-chevron">›</span>
+      </div>
+      <div class="acc-body">
+        <div class="subsection">
+          <div class="sub-title">Variceal Locations</div>
+          <ul class="bullets">
+            <li>Esophageal (most common), gastric, splenic, rectal, portal colopathy</li>
+            <li><strong>↑INR + ↓platelets</strong> = markedly increased bleeding risk in cirrhosis</li>
+          </ul>
+        </div>
+        <div class="alert alert-red">
+          <strong>ACUTE VARICEAL HEMORRHAGE</strong>
+          <ul class="bullets" style="margin-top:4px">
+            <li>IV <strong>PPI</strong> BID</li>
+            <li><strong>Octreotide</strong> drip (reduces portal pressure)</li>
+            <li><strong>Ceftriaxone</strong> 1 g IV daily × 7 days (SBP ppx reduces mortality)</li>
+            <li><strong>Vitamin K</strong> if INR elevated</li>
+            <li><strong>EGD</strong> within 12h → variceal band ligation</li>
+            <li>Transfuse to <strong>Hgb &gt; 7</strong> (restrictive strategy)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="acc-header" onclick="toggle(this)">
+        <div class="acc-label">Hepatic Encephalopathy</div>
+        <span class="acc-tag tag-core">CORE</span>
+        <span class="acc-chevron">›</span>
+      </div>
+      <div class="acc-body">
+        <div class="subsection">
+          <div class="sub-title">West Haven Grades</div>
+          <div class="tbl-wrap">
+            <table>
+              <thead><tr><th>Grade</th><th>Features</th></tr></thead>
+              <tbody>
+                <tr><td><strong>1</strong></td><td>Subtle — mild confusion, sleep disturbance</td></tr>
+                <tr><td><strong>2</strong></td><td>Disoriented, <strong>asterixis</strong>, altered sleep/wake cycles</td></tr>
+                <tr><td><strong>3</strong></td><td>Somnolent but arousable, gross disorientation</td></tr>
+                <tr><td><strong>4</strong></td><td>Coma</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="subsection">
+          <div class="sub-title">Treatment</div>
+          <ul class="bullets">
+            <li><strong>Lactulose</strong> — titrate to 2–3 soft bowel movements/day</li>
+            <li><strong>Rifaximin</strong> 550 mg BID — add for recurrent or persistent HE</li>
+            <li>Identify and treat precipitant: infection, GI bleed, constipation, hypokalemia, sedatives, renal failure</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <div class="acc-header" onclick="toggle(this)">
+        <div class="acc-label">Screening</div>
+        <span class="acc-tag tag-core">CORE</span>
+        <span class="acc-chevron">›</span>
+      </div>
+      <div class="acc-body">
+        <div class="tbl-wrap">
+          <table>
+            <thead><tr><th>Complication</th><th>Screening</th><th>Interval</th></tr></thead>
+            <tbody>
+              <tr><td><strong>HCC</strong></td><td>U/S abdomen + AFP</td><td>Every 6 months</td></tr>
+              <tr><td><strong>Varices</strong></td><td>EGD (Baveno criteria to determine need)</td><td>Every 1–3 years (if no varices on first scope)</td></tr>
+              <tr><td><strong>Vaccinations</strong></td><td>HAV, HBV, PPSV23, PCV15/20, annual influenza, COVID</td><td>Per schedule</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="alert alert-yellow" style="margin-top:12px">
+          <strong>BAVENO CRITERIA</strong>
+          If LSM &lt; 20 kPa AND platelets &gt; 150k → can defer screening EGD (low risk of high-risk varices).
+        </div>
+      </div>
+    </div>
+
   </div>
 
 </div>
