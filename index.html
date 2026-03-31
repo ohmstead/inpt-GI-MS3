@@ -339,6 +339,7 @@
   <div class="header-title">Inpatient GI — Clinical Reference</div>
   <div class="header-right">
     <div class="header-sub">VA La Jolla (#2743)</div>
+    <button class="theme-toggle" onclick="location.reload()" id="refresh-btn" style="display:none">↺ Refresh</button>
     <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn">☀ Light</button>
   </div>
 </div>
@@ -1288,6 +1289,10 @@
       btn.textContent = '☾ Dark';
       localStorage.setItem('theme', 'light');
     }
+  }
+
+  if (window.navigator.standalone) {
+    document.getElementById('refresh-btn').style.display = '';
   }
 
   (function() {
