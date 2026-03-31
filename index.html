@@ -336,11 +336,11 @@
 
 <div class="header">
   <div class="header-badge">MS3</div>
-  <div class="header-title">Inpatient GI — Clinical Reference</div>
+  <div class="header-title">GI consult reference</div>
   <div class="header-right">
     <div class="header-sub">VA La Jolla (#2743)</div>
-    <button class="theme-toggle" onclick="location.reload()" id="refresh-btn" style="display:none">↺ Refresh</button>
-    <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn">☀ Light</button>
+    <button class="theme-toggle" onclick="location.reload()" id="refresh-btn" style="display:none; padding:4px 8px; font-size:13px;">↺</button>
+    <button class="theme-toggle" onclick="toggleTheme()" id="theme-btn" style="padding:4px 8px; font-size:13px;">☀</button>
   </div>
 </div>
 
@@ -1284,11 +1284,11 @@
     const btn = document.getElementById('theme-btn');
     if (html.getAttribute('data-theme') === 'light') {
       html.removeAttribute('data-theme');
-      btn.textContent = '☀ Light';
+      btn.textContent = '☀';
       localStorage.setItem('theme', 'dark');
     } else {
       html.setAttribute('data-theme', 'light');
-      btn.textContent = '☾ Dark';
+      btn.textContent = '☾';
       localStorage.setItem('theme', 'light');
     }
   }
@@ -1301,7 +1301,7 @@
     if (localStorage.getItem('theme') === 'light') {
       document.documentElement.setAttribute('data-theme', 'light');
       document.addEventListener('DOMContentLoaded', function() {
-        document.getElementById('theme-btn').textContent = '☾ Dark';
+        document.getElementById('theme-btn').textContent = '☾';
       });
     }
   })();
